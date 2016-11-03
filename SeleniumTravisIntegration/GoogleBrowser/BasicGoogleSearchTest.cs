@@ -19,7 +19,13 @@ namespace GoogleBrowser
         [TestFixtureSetUp]
         public void TestFixtureSetUp()
         {
-            driver = new PhantomJSDriver();
+            DesiredCapabilities capability = DesiredCapabilities.Firefox();
+            capability.SetCapability("browserstack.user", "verhellep1");
+            capability.SetCapability("browserstack.key", "4qjcdestxzk8wYe6vppB");
+
+            driver = new RemoteWebDriver(
+              new Uri("http://hub-cloud.browserstack.com/wd/hub/"), capability
+            );
             SetDriverSettings(driver);
         }
 
@@ -35,6 +41,8 @@ namespace GoogleBrowser
             driver.Navigate().GoToUrl("http://www.google.com");
             driver.FindElement(By.Name("q")).SendKeys("google this and that" + Keys.Enter);
         }
+
+
 
 
         private void SetDriverSettings(IWebDriver driver)
