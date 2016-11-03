@@ -1,0 +1,8 @@
+language: csharp
+solution: SeleniumTravisIntegration.sln
+install:
+  - nuget restore SeleniumTravisIntegration.sln
+  - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
+script:
+  - xbuild /p:Configuration=Release SeleniumTravisIntegration.sln
+  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./GoogleBrowser/bin/Release/GoogleBrowser.dll

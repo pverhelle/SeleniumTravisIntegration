@@ -19,7 +19,7 @@ namespace GoogleBrowser
         [TestFixtureSetUp]
         public void TestFixtureSetUp()
         {
-            driver = new FirefoxDriver();
+            driver = new PhantomJSDriver();
             SetDriverSettings(driver);
         }
 
