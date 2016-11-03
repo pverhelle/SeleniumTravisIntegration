@@ -23,6 +23,12 @@ namespace GoogleBrowser
             capability.SetCapability("browserstack.user", "verhellep1");
             capability.SetCapability("browserstack.key", "4qjcdestxzk8wYe6vppB");
 
+            capability.SetCapability("browser", "IE");
+            capability.SetCapability("browser_version", "11.0");
+            capability.SetCapability("os", "Windows");
+            capability.SetCapability("os_version", "10");
+            capability.SetCapability("resolution", "1280x1024");
+
             driver = new RemoteWebDriver(
               new Uri("http://hub-cloud.browserstack.com/wd/hub/"), capability
             );
