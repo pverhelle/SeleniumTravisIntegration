@@ -1,7 +1,7 @@
 language: csharp
 solution: ./SeleniumTravisIntegration/SeleniumTravisIntegration.sln
 install:
-  - nuget restore ./SeleniumTravisIntegrationSeleniumTravisIntegration.sln
+  - nuget restore ./SeleniumTravisIntegration/SeleniumTravisIntegration.sln
   - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
 script:
   - xbuild /p:Configuration=Release ./SeleniumTravisIntegration/SeleniumTravisIntegration.sln
